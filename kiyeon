@@ -1,3 +1,13 @@
-dsjlkdaldj;lsa;ldlw
+import matplotlib.pyplot as plt
+import numpy as np
+filename = './single_crystal_test_out.csv'
+data = np.genfromtxt(filename, dtype=float, delimiter=',', names=True)
+x = data['e_zz']
+y = data['stress_zz']
+fig = plt.figure(dpi=300)
+fig,ax = plt.subplots()
+ax.plot(x,y)
+plt.show()
+fig.savefig('graph.png',format='png',bbox_inches='tight')
 
 
